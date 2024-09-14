@@ -7,5 +7,37 @@ body{
     background-size: cover;
 }
 .container{
-    
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.container .layer{
+    /* background-color: brown; */
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    bottom: 15% ;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: all 0.7;
+    --left: 0px;
+}
+.container .layer .image{
+    background:
+            url("/Rotate-Earth/img/world-map-geography-background.png") var(--left) 0,
+            url("/Rotate-Earth/img/floating-sphere-white-room.png");
+    background-size: 100%;
+    background-size: cover;
+    width: 60vmin;
+    height: 60vmin;
+    left: 25px;
+    background-blend-mode: multiply ;
+    mask-image: url("/Rotate-Earth/img/floating-sphere-white-room.png");
+    mask-size: auto 100%;
+    transition: all 0.7s;
+    overflow: hidden;
+}
+.container .layer .image:hover{
+    --left: -500px;
 }
